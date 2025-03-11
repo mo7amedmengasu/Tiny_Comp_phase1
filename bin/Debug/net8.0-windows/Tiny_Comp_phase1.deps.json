@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Tiny_Comp_phase1/1.0.0": {
+        "runtime": {
+          "Tiny_Comp_phase1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tiny_Comp_phase1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
