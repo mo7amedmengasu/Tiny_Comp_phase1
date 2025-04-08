@@ -70,6 +70,7 @@ namespace Tiny_Comp_phase1
 
         public void StartScanning(string SourceCode)
         {
+            bool lexicalerrorfromdigit = false;
             Tokens.Clear();
             Errors.Error_List.Clear();
             int last_index = -1;
@@ -85,17 +86,9 @@ namespace Tiny_Comp_phase1
                     continue;
                 }
 
-                if (char.IsLetter(current_char))
+                if (char.IsLetterOrDigit(current_char))
                 {
                     while (next_index < SourceCode.Length && char.IsLetterOrDigit(SourceCode[next_index]))
-                    {
-                        current_lex += SourceCode[next_index];
-                        next_index++;
-                    }
-                }
-                else if (char.IsDigit(current_char))
-                {
-                    while (next_index < SourceCode.Length && (char.IsDigit(SourceCode[next_index]) || SourceCode[next_index] == '.'))
                     {
                         current_lex += SourceCode[next_index];
                         next_index++;
@@ -147,22 +140,17 @@ namespace Tiny_Comp_phase1
                         }
                     }
 
-                    //if (Operators.ContainsKey(current_lex) || Symbols.ContainsKey(current_lex))
-                    //{
-                    //    FindTokenClass(current_lex);
-                    //    i = next_index - 1;
-                    //    last_index = next_index;
-                    //    continue;
-                    //}
+   
                 }
 
-                FindTokenClass(current_lex);
-                i = next_index - 1;
-                last_index = next_index;
+             
+                  FindTokenClass(current_lex);
+                  i = next_index - 1;
+                  last_index = next_index;
+                
             }
 
-            //if (last_index == SourceCode.Length)
-            //    FindTokenClass(SourceCode[last_index - 1].ToString());
+   
 
             Tiny_Comp_phase1.TokenStream = Tokens;
         }
