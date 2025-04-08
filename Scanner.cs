@@ -88,7 +88,7 @@ namespace Tiny_Comp_phase1
 
                 if (char.IsLetterOrDigit(current_char))
                 {
-                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' '&& (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index]=='.') &&!Operators.ContainsKey(SourceCode[next_index].ToString()))
+                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' '&& (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index]=='.') &&!Operators.ContainsKey(SourceCode[next_index].ToString())&& SourceCode[next_index]!=':')
                     {
                         if (SourceCode[next_index] == ';')
                             break;
