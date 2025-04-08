@@ -105,7 +105,7 @@ namespace Tiny_Comp_phase1
                     {
                         current_lex += SourceCode[next_index];
                         next_index++;
-                        while (next_index < SourceCode.Length - 1 && !(SourceCode[next_index] == '*' && SourceCode[next_index + 1] == '/'))
+                        while (next_index < SourceCode.Length  && !(SourceCode[next_index] == '*' && SourceCode[next_index + 1] == '/'))
                         {
                             current_lex += SourceCode[next_index];
                             next_index++;
