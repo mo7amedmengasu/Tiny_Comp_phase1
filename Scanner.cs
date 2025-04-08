@@ -88,9 +88,14 @@ namespace Tiny_Comp_phase1
 
                 if (char.IsLetterOrDigit(current_char))
                 {
-                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' ')
+                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' '&& !Symbols.ContainsKey(SourceCode[next_index].ToString())&&!Operators.ContainsKey(SourceCode[next_index].ToString()))
                     {
+                        if (SourceCode[next_index] == ';')
+                            break;
+             
+
                         current_lex += SourceCode[next_index];
+
                         next_index++;
                     }
                 }
@@ -144,9 +149,9 @@ namespace Tiny_Comp_phase1
                 }
 
              
-                  FindTokenClass(current_lex);
-                  i = next_index - 1;
-                  last_index = next_index;
+                FindTokenClass(current_lex);
+                i = next_index - 1;
+                last_index = next_index;
                 
             }
 
