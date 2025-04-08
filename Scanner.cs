@@ -70,7 +70,7 @@ namespace Tiny_Comp_phase1
 
         public void StartScanning(string SourceCode)
         {
-            bool lexicalerrorfromdigit = false;
+         
             Tokens.Clear();
             Errors.Error_List.Clear();
             int last_index = -1;
@@ -88,7 +88,7 @@ namespace Tiny_Comp_phase1
 
                 if (char.IsLetterOrDigit(current_char))
                 {
-                    while (next_index < SourceCode.Length && char.IsLetterOrDigit(SourceCode[next_index]))
+                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' ')
                     {
                         current_lex += SourceCode[next_index];
                         next_index++;
