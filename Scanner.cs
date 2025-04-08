@@ -147,13 +147,13 @@ namespace Tiny_Comp_phase1
                         }
                     }
 
-                    if (Operators.ContainsKey(current_lex) || Symbols.ContainsKey(current_lex))
-                    {
-                        FindTokenClass(current_lex);
-                        i = next_index - 1;
-                        last_index = next_index;
-                        continue;
-                    }
+                    //if (Operators.ContainsKey(current_lex) || Symbols.ContainsKey(current_lex))
+                    //{
+                    //    FindTokenClass(current_lex);
+                    //    i = next_index - 1;
+                    //    last_index = next_index;
+                    //    continue;
+                    //}
                 }
 
                 FindTokenClass(current_lex);
@@ -161,8 +161,8 @@ namespace Tiny_Comp_phase1
                 last_index = next_index;
             }
 
-            if (last_index == SourceCode.Length)
-                FindTokenClass(SourceCode[last_index - 1].ToString());
+            //if (last_index == SourceCode.Length)
+            //    FindTokenClass(SourceCode[last_index - 1].ToString());
 
             Tiny_Comp_phase1.TokenStream = Tokens;
         }
