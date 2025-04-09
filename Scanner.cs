@@ -88,33 +88,39 @@ namespace Tiny_Comp_phase1
 
                 if (char.IsLetterOrDigit(current_char))
                 {
-                    while (next_index < SourceCode.Length && SourceCode[next_index] != ' '&& (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index]=='.') &&!Operators.ContainsKey(SourceCode[next_index].ToString())&& SourceCode[next_index]!=':')
+                    while (next_index < SourceCode.Length && !(SourceCode[next_index] == ' ' || SourceCode[next_index] == '\n' || SourceCode[next_index] == '\t' || SourceCode[next_index] == '\r') && (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index]=='.') &&!Operators.ContainsKey(SourceCode[next_index].ToString())&& SourceCode[next_index] != ':')
                     {
                         if (SourceCode[next_index] == ';')
                             break;
-             
-
+                            
                         current_lex += SourceCode[next_index];
 
                         next_index++;
                     }
+                
+
                 }
                 else if (current_char == '/')
                 {
                     if (next_index < SourceCode.Length && SourceCode[next_index] == '*')
                     {
-                        current_lex += SourceCode[next_index];
-                        next_index++;
-                        while (next_index < SourceCode.Length  && !(SourceCode[next_index] == '*' && SourceCode[next_index + 1] == '/'))
+                        while (next_index < SourceCode.Length)
                         {
-                            current_lex += SourceCode[next_index];
-                            next_index++;
+                            if (SourceCode[next_index] == '*' && next_index + 1 < SourceCode.Length && SourceCode[next_index + 1] == '/')
+                            {
+                                current_lex += "*";
+                                current_lex += "/";
+                                next_index += 2;
+
+                                break;
+                            }
+                            else
+                            {
+                                current_lex += SourceCode[next_index];
+                                next_index++;
+                            }
                         }
-                        if (next_index < SourceCode.Length - 1)
-                        {
-                            current_lex += "*/";
-                            next_index += 2;
-                        }
+
                     }
                 }
                 else if (current_char == '"')
