@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tiny_Comp_phase1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d98ac35e2dce738172e35c4250ae24e78f92c90e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+852460f8f7e4972d5a6a98e88a0b70a95ac6fe97")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tiny_Comp_phase1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tiny_Comp_phase1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

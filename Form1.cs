@@ -26,8 +26,7 @@ namespace Tiny_Comp_phase1
             string Code = textBox1.Text;
             Tiny_Comp_phase1.Start_Compiling(Code);
             PrintTokens();
-            //   PrintLexemes();
-            PrintTokens();
+        
             //PrintLexemes();
             treeView2.Nodes.Add(Parser.PrintParseTree(Tiny_Comp_phase1.treeroot));
 

@@ -89,8 +89,16 @@ namespace Tiny_Comp_phase1
         private Node Condition()
         {
             Node node = new Node("Condition");
+            if (IsvalidToken(Token_Class.MinusOp))
+            {
+                node.Children.Add(Match(Token_Class.MinusOp)); // Match the negative sign
+            }
             node.Children.Add(Expression());
             node.Children.Add(Condition_Operator());
+            if (IsvalidToken(Token_Class.MinusOp))
+            {
+                node.Children.Add(Match(Token_Class.MinusOp)); // Match the negative sign
+            }
             node.Children.Add(Expression());
             return node;
         }
@@ -325,23 +333,23 @@ namespace Tiny_Comp_phase1
         private Node If_Statement()
         {
             Node node = new Node("If_Statement");
-            node.Children.Add(Match(Token_Class.If));
-            node.Children.Add(Condition_Statement());
-            node.Children.Add(Match(Token_Class.Then));
-            node.Children.Add(Statement_List());
-            node.Children.Add(Optional_Else_Ifs());
-            node.Children.Add(Optional_Else());
-            node.Children.Add(Match(Token_Class.End));
+            node.Children.Add(Match(Token_Class.If)); // Match 'if'
+            node.Children.Add(Condition()); // Parse the condition directly without parentheses
+            node.Children.Add(Match(Token_Class.Then)); // Match 'then'
+            node.Children.Add(Statement_List()); // Parse the statements inside the 'if' block
+            node.Children.Add(Optional_Else_Ifs()); // Parse optional 'elseif' blocks
+            node.Children.Add(Optional_Else()); // Parse optional 'else' block
+            node.Children.Add(Match(Token_Class.End)); // Match 'end'
             return node;
         }
 
         private Node Repeat_Statement()
         {
             Node node = new Node("Repeat_Statement");
-            node.Children.Add(Match(Token_Class.Repeat));
-            node.Children.Add(Statement_List());
-            node.Children.Add(Match(Token_Class.Until));
-            node.Children.Add(Condition_Statement());
+            node.Children.Add(Match(Token_Class.Repeat)); // Match 'repeat'
+            node.Children.Add(Statement_List()); // Parse the statements inside the 'repeat' block
+            node.Children.Add(Match(Token_Class.Until)); // Match 'until'
+            node.Children.Add(Condition()); // Parse the condition directly without parentheses
             return node;
         }
 

@@ -17,7 +17,7 @@ namespace Tiny_Comp_phase1
 {
     public class Token
     {
-        public string lex ="";
+        public string lex = "";
         public Token_Class token_type;
     }
     class Scanner
@@ -70,7 +70,7 @@ namespace Tiny_Comp_phase1
 
         public void StartScanning(string SourceCode)
         {
-         
+
             Tokens.Clear();
             Errors.Error_List.Clear();
             int last_index = -1;
@@ -88,16 +88,16 @@ namespace Tiny_Comp_phase1
 
                 if (char.IsLetterOrDigit(current_char))
                 {
-                    while (next_index < SourceCode.Length && !(SourceCode[next_index] == ' ' || SourceCode[next_index] == '\n' || SourceCode[next_index] == '\t' || SourceCode[next_index] == '\r') && (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index]=='.') &&!Operators.ContainsKey(SourceCode[next_index].ToString())&& SourceCode[next_index] != ':')
+                    while (next_index < SourceCode.Length && !(SourceCode[next_index] == ' ' || SourceCode[next_index] == '\n' || SourceCode[next_index] == '\t' || SourceCode[next_index] == '\r') && (!Symbols.ContainsKey(SourceCode[next_index].ToString()) || SourceCode[next_index] == '.') && !Operators.ContainsKey(SourceCode[next_index].ToString()) && SourceCode[next_index] != ':')
                     {
                         if (SourceCode[next_index] == ';')
                             break;
-                            
+
                         current_lex += SourceCode[next_index];
 
                         next_index++;
                     }
-                
+
 
                 }
                 else if (current_char == '/')
@@ -125,7 +125,7 @@ namespace Tiny_Comp_phase1
                 }
                 else if (current_char == '"')
                 {
-                    while (next_index < SourceCode.Length && SourceCode[next_index] != '"'&& SourceCode[next_index]!='\n')
+                    while (next_index < SourceCode.Length && SourceCode[next_index] != '"')
                     {
                         current_lex += SourceCode[next_index];
                         next_index++;
@@ -151,17 +151,17 @@ namespace Tiny_Comp_phase1
                         }
                     }
 
-   
+
                 }
 
-             
+
                 FindTokenClass(current_lex);
                 i = next_index - 1;
                 last_index = next_index;
-                
+
             }
 
-   
+
 
             Tiny_Comp_phase1.TokenStream = Tokens;
         }
@@ -169,7 +169,7 @@ namespace Tiny_Comp_phase1
 
         void FindTokenClass(string Lex)
         {
-            if(Lex == null)
+            if (Lex == null)
             {
                 return;
             }
@@ -257,19 +257,20 @@ namespace Tiny_Comp_phase1
         {
             bool isValid;
             int len = lex.Length;
-            if ((lex[0] == '"' && lex[len - 1] == '"')) {
+            if ((lex[0] == '"' && lex[len - 1] == '"'))
+            {
                 isValid = true;
             }
             else
             {
                 isValid = false;
             }
-                return isValid;
+            return isValid;
         }
 
         public bool IsComment(string lex)
         {
-            return (lex.Length >= 4 && lex.StartsWith("/*") && lex.EndsWith("*/"));
+            return (lex.Length >= 4 && lex.StartsWith("/") && lex.EndsWith("/"));
         }
 
 
