@@ -125,7 +125,7 @@ namespace Tiny_Comp_phase1
                 }
                 else if (current_char == '"')
                 {
-                    while (next_index < SourceCode.Length && SourceCode[next_index] != '"')
+                    while (next_index < SourceCode.Length && SourceCode[next_index] != '"'&& SourceCode[next_index]!='\n')
                     {
                         current_lex += SourceCode[next_index];
                         next_index++;

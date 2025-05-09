@@ -15,3 +15,4 @@ C:\Users\DELL\source\repos\Tiny_Comp_phase1\obj\Debug\net8.0-windows\refint\Tiny
 C:\Users\DELL\source\repos\Tiny_Comp_phase1\obj\Debug\net8.0-windows\Tiny_Comp_phase1.pdb
 C:\Users\DELL\source\repos\Tiny_Comp_phase1\obj\Debug\net8.0-windows\Tiny_Comp_phase1.genruntimeconfig.cache
 C:\Users\DELL\source\repos\Tiny_Comp_phase1\obj\Debug\net8.0-windows\ref\Tiny_Comp_phase1.dll
+C:\Users\DELL\source\repos\Tiny_Comp_phase1\obj\Debug\net8.0-windows\Tiny_Comp_phase1.sourcelink.json

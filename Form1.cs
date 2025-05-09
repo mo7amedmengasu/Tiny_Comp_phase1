@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Tiny_Comp_phase1;
 namespace Tiny_Comp_phase1
 {
     public partial class Form1 : Form
@@ -27,14 +27,17 @@ namespace Tiny_Comp_phase1
             Tiny_Comp_phase1.Start_Compiling(Code);
             PrintTokens();
             //   PrintLexemes();
+            PrintTokens();
+            //PrintLexemes();
+            treeView2.Nodes.Add(Parser.PrintParseTree(Tiny_Comp_phase1.treeroot));
 
             PrintErrors();
         }
         void PrintTokens()
         {
-            for (int i = 0; i < Tiny_Comp_phase1.Tiny_scanner.Tokens.Count; i++)
+            for (int i = 0; i < Tiny_Comp_phase1.Tiny_Scanner.Tokens.Count; i++)
             {
-                dataGridView1.Rows.Add(Tiny_Comp_phase1.Tiny_scanner.Tokens.ElementAt(i).lex, Tiny_Comp_phase1.Tiny_scanner.Tokens.ElementAt(i).token_type);
+                dataGridView1.Rows.Add(Tiny_Comp_phase1.Tiny_Scanner.Tokens.ElementAt(i).lex, Tiny_Comp_phase1.Tiny_Scanner.Tokens.ElementAt(i).token_type);
             }
         }
 
@@ -63,6 +66,16 @@ namespace Tiny_Comp_phase1
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }

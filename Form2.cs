@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace Tiny_Comp_phase1
 {
-    public partial class Form2: Form
+    public partial class Form2 : Form
     {
         public Form2()
         {
             InitializeComponent();
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }
