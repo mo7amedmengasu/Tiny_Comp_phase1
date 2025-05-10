@@ -12,6 +12,7 @@ namespace Tiny_Comp_phase1
         public static Parser Tiny_Parser = new Parser();
         public static List<string> Lexemes = new List<string>();
         public static List<Token> TokenStream = new List<Token>();
+        public static List<Token> TokenStream1 = new List<Token>();
         public static Node treeroot;
 
         public static void Start_Compiling(string SourceCode) //character by character
@@ -19,7 +20,7 @@ namespace Tiny_Comp_phase1
             //Scanner
             Tiny_Scanner.StartScanning(SourceCode);
             //Parser
-            Tiny_Parser.StartParsing(TokenStream);
+            Tiny_Parser.StartParsing(TokenStream1);
             treeroot = Tiny_Parser.root;
         }
 

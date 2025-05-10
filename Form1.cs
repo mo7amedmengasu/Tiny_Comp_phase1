@@ -62,6 +62,7 @@ namespace Tiny_Comp_phase1
         {
             dataGridView1.Rows.Clear();
             Tiny_Comp_phase1.TokenStream.Clear();
+            this.treeView2.Nodes.Clear();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

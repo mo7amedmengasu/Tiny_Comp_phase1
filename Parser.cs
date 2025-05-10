@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tiny_Comp_phase1;
 
 namespace Tiny_Comp_phase1
 {

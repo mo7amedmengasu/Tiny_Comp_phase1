@@ -164,6 +164,17 @@ namespace Tiny_Comp_phase1
 
 
             Tiny_Comp_phase1.TokenStream = Tokens;
+            for (int i = 0; i < Tokens.Count; i++)
+            {
+                if (Tokens[i].token_type == Token_Class.Comment)
+                {
+                    continue;
+                }
+                else
+                {
+                    Tiny_Comp_phase1.TokenStream1.Add(Tokens[i]);
+                }
+            }
         }
 
 
