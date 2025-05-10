@@ -580,6 +580,12 @@ namespace Tiny_Comp_phase1
 
         private Node Match(Token_Class ExpectedToken)
         {
+            // Skip all comment tokens
+            while (TokenIndex < TokenStream.Count && TokenStream[TokenIndex].token_type == Token_Class.Comment)
+            {
+                TokenIndex++; // Skip the comment
+            }
+
             if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
             {
                 TokenIndex++;
@@ -598,12 +604,15 @@ namespace Tiny_Comp_phase1
                     TokenIndex++;
                 }
                 else
+                {
                     Errors.Error_List.Add("Parsing Error: Expected "
                         + ExpectedToken.ToString() + " and nothing was found\r\n");
+                }
 
                 return null;
             }
         }
+
 
         public static TreeNode PrintParseTree(Node root)
         {
