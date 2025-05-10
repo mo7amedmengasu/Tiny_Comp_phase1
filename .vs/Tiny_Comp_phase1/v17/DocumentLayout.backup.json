@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\tiny_comp_phase1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:tiny_comp_phase1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\test\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:test\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\test\\test2.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:test\\test2.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\test\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:test\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\tiny_comp_phase1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:tiny_comp_phase1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,9 +70,9 @@
               "Title": "Parser.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Parser.cs",
               "RelativeDocumentMoniker": "Parser.cs",
-              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Parser.cs*",
-              "RelativeToolTip": "Parser.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Parser.cs",
+              "RelativeToolTip": "Parser.cs",
+              "ViewState": "AgIAADsBAAAAAAAAAAAcwEsBAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T09:47:43.728Z",
               "EditorCaption": ""
@@ -127,20 +127,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "test1.txt",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\test\\test1.txt",
               "RelativeDocumentMoniker": "test\\test1.txt",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\test\\test1.txt",
               "RelativeToolTip": "test\\test1.txt",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwB8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-05-09T10:03:19.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "test2.txt",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\test\\test2.txt",
               "RelativeDocumentMoniker": "test\\test2.txt",
@@ -153,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Tiny_Comp_phase1.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Tiny_Comp_phase1.cs",
               "RelativeDocumentMoniker": "Tiny_Comp_phase1.cs",
@@ -166,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Scanner.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Scanner.cs",
               "RelativeDocumentMoniker": "Scanner.cs",

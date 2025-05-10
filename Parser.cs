@@ -90,16 +90,8 @@ namespace Tiny_Comp_phase1
         private Node Condition()
         {
             Node node = new Node("Condition");
-            if (IsvalidToken(Token_Class.MinusOp))
-            {
-                node.Children.Add(Match(Token_Class.MinusOp)); // Match the negative sign
-            }
             node.Children.Add(Expression());
             node.Children.Add(Condition_Operator());
-            if (IsvalidToken(Token_Class.MinusOp))
-            {
-                node.Children.Add(Match(Token_Class.MinusOp)); // Match the negative sign
-            }
             node.Children.Add(Expression());
             return node;
         }
@@ -300,7 +292,11 @@ namespace Tiny_Comp_phase1
         {
             Node node = new Node("Condition_Statement");
             node.Children.Add(Condition());
-            node.Children.Add(Cond_Tail());
+            while (IsvalidToken(Token_Class.AndOp) || IsvalidToken(Token_Class.OrOp))
+            {
+                node.Children.Add(Boolean_Operator());
+                node.Children.Add(Condition());
+            }
             return node;
         }
 
@@ -335,7 +331,7 @@ namespace Tiny_Comp_phase1
         {
             Node node = new Node("If_Statement");
             node.Children.Add(Match(Token_Class.If)); // Match 'if'
-            node.Children.Add(Condition()); // Parse the condition directly without parentheses
+            node.Children.Add(Condition_Statement()); // Parse the condition directly without parentheses
             node.Children.Add(Match(Token_Class.Then)); // Match 'then'
             node.Children.Add(Statement_List()); // Parse the statements inside the 'if' block
             node.Children.Add(Optional_Else_Ifs()); // Parse optional 'elseif' blocks
