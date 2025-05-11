@@ -363,7 +363,7 @@ namespace Tiny_Comp_phase1
         {
             Node node = new Node("Write_Statement");
             node.Children.Add(Match(Token_Class.Write));
-            node.Children.Add(Match(Token_Class.LParanthesis));
+           // node.Children.Add(Match(Token_Class.LParanthesis));
             if (IsvalidToken(Token_Class.Endl))
             {
                 node.Children.Add(Match(Token_Class.Endl));
@@ -372,7 +372,7 @@ namespace Tiny_Comp_phase1
             {
                 node.Children.Add(Expression());
             }
-            node.Children.Add(Match(Token_Class.RParanthesis));
+           // node.Children.Add(Match(Token_Class.RParanthesis));
             node.Children.Add(Match(Token_Class.semicolon));
             return node;
         }

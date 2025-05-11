@@ -26,7 +26,7 @@ namespace Tiny_Comp_phase1
             string Code = textBox1.Text;
             Tiny_Comp_phase1.Start_Compiling(Code);
             PrintTokens();
-        
+
             //PrintLexemes();
             treeView2.Nodes.Add(Parser.PrintParseTree(Tiny_Comp_phase1.treeroot));
 
@@ -60,6 +60,7 @@ namespace Tiny_Comp_phase1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
             dataGridView1.Rows.Clear();
             Tiny_Comp_phase1.TokenStream.Clear();
             this.treeView2.Nodes.Clear();
@@ -76,6 +77,11 @@ namespace Tiny_Comp_phase1
         }
 
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
