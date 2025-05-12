@@ -23,7 +23,7 @@ namespace Tiny_Comp_phase1
     class Scanner
     {
         public List<Token> Tokens = new List<Token>();
-        Dictionary<string, Token_Class> ReservedWords = new Dictionary<string, Token_Class>();
+        public  Dictionary<string, Token_Class> ReservedWords = new Dictionary<string, Token_Class>();
         Dictionary<string, Token_Class> Operators = new Dictionary<string, Token_Class>();
         Dictionary<string, Token_Class> Symbols = new Dictionary<string, Token_Class>();
 
@@ -92,6 +92,10 @@ namespace Tiny_Comp_phase1
                     {
                         if (SourceCode[next_index] == ';')
                             break;
+                        if (SourceCode[next_index] == ' ')
+                        {
+                            break;
+                        }
 
                         current_lex += SourceCode[next_index];
 

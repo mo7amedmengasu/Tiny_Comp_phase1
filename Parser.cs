@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Tiny_Comp_phase1;
 
@@ -577,37 +578,48 @@ namespace Tiny_Comp_phase1
 
         private Node Match(Token_Class ExpectedToken)
         {
-            // Skip all comment tokens
-            while (TokenIndex < TokenStream.Count && TokenStream[TokenIndex].token_type == Token_Class.Comment)
-            {
-                TokenIndex++; // Skip the comment
-            }
 
-            if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
-            {
-                TokenIndex++;
-                Node newNode = new Node(ExpectedToken.ToString());
-                return newNode;
-            }
-            else
-            {
-                if (TokenIndex < TokenStream.Count)
+                if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
                 {
-                    Errors.Error_List.Add("Parsing Error: Expected "
-                        + ExpectedToken.ToString() + " and " +
-                        TokenStream[TokenIndex].token_type.ToString() +
-                        " found\r\n"
-                        + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n");
                     TokenIndex++;
+                    Node newNode = new Node(ExpectedToken.ToString());
+                    return newNode;
                 }
                 else
                 {
-                    Errors.Error_List.Add("Parsing Error: Expected "
-                        + ExpectedToken.ToString() + " and nothing was found\r\n");
-                }
+                    if (TokenIndex < TokenStream.Count)
+                    {
+                        Errors.Error_List.Add("Parsing Error: Expected "
+                            + ExpectedToken.ToString() + " and " +
+                            TokenStream[TokenIndex].token_type.ToString() +
+                            " found&#x0a;"
+                            + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n");
 
-                return null;
-            }
+                        // Error recovery: Skip tokens until a semicolon or reserved keyword is found
+                        while (TokenIndex < TokenStream.Count &&
+                               TokenStream[TokenIndex].token_type != Token_Class.semicolon &&
+                               !IsReservedKeyword(TokenStream[TokenIndex].token_type) && !IsIdentifier(TokenStream[TokenIndex].lex))
+                        {
+                            TokenIndex++;
+                        }
+
+                    // If a semicolon or reserved keyword is found, skip it to continue parsing
+                        //if (TokenIndex < TokenStream.Count)
+                        //{
+                        //    TokenIndex++;
+                        //}
+
+
+                }
+                    else
+                    {
+                        Errors.Error_List.Add("Parsing Error: Expected "
+                            + ExpectedToken.ToString() + " and nothing was found");
+                    }
+
+                    return null;
+                }
+            
         }
 
 
@@ -618,6 +630,27 @@ namespace Tiny_Comp_phase1
             if (treeRoot != null)
                 tree.Nodes.Add(treeRoot);
             return tree;
+        }
+        public bool IsReservedKeyword(Token_Class token)
+        {
+            return token == Token_Class.Int ||
+                   token == Token_Class.Float ||
+                   token == Token_Class.String ||
+                   token == Token_Class.Main ||
+                   token == Token_Class.If ||
+                   token == Token_Class.Elseif ||
+                   token == Token_Class.Else ||
+                   token == Token_Class.Then ||
+                   token == Token_Class.End ||
+                   token == Token_Class.Repeat ||
+                   token == Token_Class.Until ||
+                   token == Token_Class.Read ||
+                   token == Token_Class.Write;
+        }
+        public bool IsIdentifier(string lex)
+        {
+            Regex reg = new Regex(@"^([a-zA-Z])([0-9a-zA-Z])*$", RegexOptions.Compiled);
+            return reg.IsMatch(lex);
         }
 
         public static TreeNode PrintTree(Node root)
