@@ -343,12 +343,13 @@ namespace Tiny_Comp_phase1
 
         private Node Repeat_Statement()
         {
+            bool cont = false;
             Node node = new Node("Repeat_Statement");
             node.Children.Add(Match(Token_Class.Repeat)); // Match 'repeat'
             node.Children.Add(Statement_List()); // Parse the statements inside the 'repeat' block
             node.Children.Add(Match(Token_Class.Until)); // Match 'until'
             node.Children.Add(Condition()); // Parse the condition directly without parentheses
-            return node;
+            return node;  
         }
 
         private Node Read_Statement()
@@ -579,8 +580,11 @@ namespace Tiny_Comp_phase1
         private Node Match(Token_Class ExpectedToken)
         {
 
+                
+
                 if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
                 {
+  
                     TokenIndex++;
                     Node newNode = new Node(ExpectedToken.ToString());
                     return newNode;
@@ -589,11 +593,12 @@ namespace Tiny_Comp_phase1
                 {
                     if (TokenIndex < TokenStream.Count)
                     {
+
                         Errors.Error_List.Add("Parsing Error: Expected "
                             + ExpectedToken.ToString() + " and " +
                             TokenStream[TokenIndex].token_type.ToString() +
-                            " found&#x0a;"
-                            + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n");
+                            " found;"
+                            + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n"  );
 
                         // Error recovery: Skip tokens until a semicolon or reserved keyword is found
                         while (TokenIndex < TokenStream.Count &&
@@ -603,12 +608,16 @@ namespace Tiny_Comp_phase1
                             TokenIndex++;
                         }
 
-                    // If a semicolon or reserved keyword is found, skip it to continue parsing
-                        //if (TokenIndex < TokenStream.Count)
-                        //{
-                        //    TokenIndex++;
-                        //}
+                        if(TokenIndex < TokenStream.Count && TokenStream[TokenIndex].lex == ";")
+                        {
+                            TokenIndex++;
+                        }
 
+                    // If a semicolon or reserved keyword is found, skip it to continue parsing
+                    //if (TokenIndex < TokenStream.Count)
+                    //{
+                    //    TokenIndex++;
+                    //}
 
                 }
                     else
@@ -621,6 +630,54 @@ namespace Tiny_Comp_phase1
                 }
             
         }
+        //private Node Match1(Token_Class ExpectedToken ,ref bool cont)
+        //{
+
+
+
+        //    if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
+        //    {
+        //        TokenIndex++;
+        //        cont = true;
+        //        Node newNode = new Node(ExpectedToken.ToString());
+        //        return newNode;
+        //    }
+        //    else
+        //    {
+        //        if (TokenIndex < TokenStream.Count)
+        //        {
+        //            Errors.Error_List.Add("Parsing Error: Expected "
+        //                + ExpectedToken.ToString() + " and " +
+        //                TokenStream[TokenIndex].token_type.ToString() +
+        //                " found&#x0a;"
+        //                + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n");
+
+        //            // Error recovery: Skip tokens until a semicolon or reserved keyword is found
+        //            while (TokenIndex < TokenStream.Count &&
+        //                   TokenStream[TokenIndex].token_type != Token_Class.semicolon &&
+        //                   !IsReservedKeyword(TokenStream[TokenIndex].token_type) && !IsIdentifier(TokenStream[TokenIndex].lex))
+        //            {
+        //                TokenIndex++;
+        //            }
+
+        //            // If a semicolon or reserved keyword is found, skip it to continue parsing
+        //            //if (TokenIndex < TokenStream.Count)
+        //            //{
+        //            //    TokenIndex++;
+        //            //}
+
+
+        //        }
+        //        else
+        //        {
+        //            Errors.Error_List.Add("Parsing Error: Expected "
+        //                + ExpectedToken.ToString() + " and nothing was found");
+        //        }
+
+        //        return null;
+        //    }
+
+        //}
 
 
         public static TreeNode PrintParseTree(Node root)
@@ -652,7 +709,15 @@ namespace Tiny_Comp_phase1
             Regex reg = new Regex(@"^([a-zA-Z])([0-9a-zA-Z])*$", RegexOptions.Compiled);
             return reg.IsMatch(lex);
         }
+        public  int CountIntersectedCharacters(string word1, string word2)
+        {
+            var set1 = new HashSet<char>(word1.ToLower());
+            var set2 = new HashSet<char>(word2.ToLower());
 
+            set1.IntersectWith(set2); // modifies set1 to only include common chars
+
+            return set1.Count;
+        } 
         public static TreeNode PrintTree(Node root)
         {
             if (root == null || root.Name == null)
