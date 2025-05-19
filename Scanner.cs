@@ -13,13 +13,15 @@ public enum Token_Class
     EqualOp, NotEqualOp, LessThanOp, GreaterThanOp, AndOp, OrOp,
     PlusOp, MinusOp, MultiplyOp, DivideOp, AssignOp, Idenifier, Number, Comment, LCurlyBraces, RCurlyBraces, constant, StringLiteral
 }
+
 namespace Tiny_Comp_phase1
 {
     public class Token
     {
         public string lex = "";
         public Token_Class token_type;
-    }
+    };
+
     class Scanner
     {
         public List<Token> Tokens = new List<Token>();

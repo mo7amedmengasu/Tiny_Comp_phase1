@@ -17,17 +17,50 @@ namespace Tiny_Comp_phase1
             this.Name = N;
         }
     }
-
+    
     public class Parser
     {
+        List<Token_Class> statementSync = new List<Token_Class>
+        {
+            Token_Class.Read,
+            Token_Class.Write,
+            Token_Class.If,
+            Token_Class.Repeat,
+            Token_Class.Idenifier,
+            Token_Class.Int,
+            Token_Class.Float,
+            Token_Class.StringLiteral,
+            Token_Class.Return,
+            Token_Class.Else,
+            Token_Class.Elseif,
+            Token_Class.End,
+            Token_Class.Until
+        };
         private int TokenIndex = 0;
         List<Token> TokenStream = new List<Token>();
         public Node root = new Node("Default Root");
         private Boolean MainFunctionExecuted = false;
 
+        //public Node StartParsing(List<Token> TokenStream)
+        //{
+        //    this.TokenStream = TokenStream;
+        //    root = new Node("Program");
+        //    root.Children.Add(Function_List_Opt());
+
+        //    if (!MainFunctionExecuted)
+        //        Errors.Error_List.Add("The code misses the main function !!!");
+
+        //    return root;
+        //}
+
         public Node StartParsing(List<Token> TokenStream)
         {
-            this.TokenStream = TokenStream;
+            // Reset parser state
+            this.TokenIndex = 0;
+            this.TokenStream = new List<Token>(TokenStream); // Create a new copy
+            this.MainFunctionExecuted = false;
+
+            // Create a new root
             root = new Node("Program");
             root.Children.Add(Function_List_Opt());
 
@@ -567,6 +600,7 @@ namespace Tiny_Comp_phase1
 
         private bool IsvalidToken(Token_Class token)
         {
+           
             return (TokenIndex < TokenStream.Count && TokenStream[TokenIndex].token_type == token);
         }
 
@@ -608,10 +642,6 @@ namespace Tiny_Comp_phase1
                             TokenIndex++;
                         }
 
-                        if(TokenIndex < TokenStream.Count && TokenStream[TokenIndex].lex == ";")
-                        {
-                            TokenIndex++;
-                        }
 
                     // If a semicolon or reserved keyword is found, skip it to continue parsing
                     //if (TokenIndex < TokenStream.Count)
@@ -630,54 +660,6 @@ namespace Tiny_Comp_phase1
                 }
             
         }
-        //private Node Match1(Token_Class ExpectedToken ,ref bool cont)
-        //{
-
-
-
-        //    if (TokenIndex < TokenStream.Count && ExpectedToken == TokenStream[TokenIndex].token_type)
-        //    {
-        //        TokenIndex++;
-        //        cont = true;
-        //        Node newNode = new Node(ExpectedToken.ToString());
-        //        return newNode;
-        //    }
-        //    else
-        //    {
-        //        if (TokenIndex < TokenStream.Count)
-        //        {
-        //            Errors.Error_List.Add("Parsing Error: Expected "
-        //                + ExpectedToken.ToString() + " and " +
-        //                TokenStream[TokenIndex].token_type.ToString() +
-        //                " found&#x0a;"
-        //                + " at " + TokenStream[TokenIndex].token_type.ToString() + "\n");
-
-        //            // Error recovery: Skip tokens until a semicolon or reserved keyword is found
-        //            while (TokenIndex < TokenStream.Count &&
-        //                   TokenStream[TokenIndex].token_type != Token_Class.semicolon &&
-        //                   !IsReservedKeyword(TokenStream[TokenIndex].token_type) && !IsIdentifier(TokenStream[TokenIndex].lex))
-        //            {
-        //                TokenIndex++;
-        //            }
-
-        //            // If a semicolon or reserved keyword is found, skip it to continue parsing
-        //            //if (TokenIndex < TokenStream.Count)
-        //            //{
-        //            //    TokenIndex++;
-        //            //}
-
-
-        //        }
-        //        else
-        //        {
-        //            Errors.Error_List.Add("Parsing Error: Expected "
-        //                + ExpectedToken.ToString() + " and nothing was found");
-        //        }
-
-        //        return null;
-        //    }
-
-        //}
 
 
         public static TreeNode PrintParseTree(Node root)
