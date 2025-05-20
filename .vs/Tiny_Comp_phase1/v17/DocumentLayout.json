@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|solutionrelative:scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39D65E25-1EF3-4E66-A7B3-51FD3ACC8769}|Tiny_Comp_phase1.csproj|c:\\users\\dell\\source\\repos\\tiny_comp_phase1\\tiny_comp_phase1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Parser.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Parser.cs",
               "RelativeToolTip": "Parser.cs",
-              "ViewState": "AgIAAGcCAAAAAAAAAAAuwBoAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMoCAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T09:47:43.728Z",
               "EditorCaption": ""
@@ -71,27 +71,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Scanner.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Scanner.cs",
               "RelativeDocumentMoniker": "Scanner.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Scanner.cs",
               "RelativeToolTip": "Scanner.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAzwCUBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T11:31:29.247Z"
+              "WhenOpened": "2025-04-09T11:31:29.247Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T09:58:32.448Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-09T09:58:32.448Z"
             },
             {
               "$type": "Document",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Tiny_Comp_phase1\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -115,8 +115,7 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T10:16:03.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T10:16:03.722Z"
             }
           ]
         }
